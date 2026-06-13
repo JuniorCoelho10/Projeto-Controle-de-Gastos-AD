@@ -42,6 +42,7 @@ body {
     width: 200px;
     height: 200px;
     margin: 3rem 0 2rem;
+    border-radius: 50%;
   }
 
 }
@@ -49,6 +50,7 @@ body {
 
 
 main section {
+  
   display: flex;
   flex: 1;
   gap: 1.25rem;
@@ -59,10 +61,15 @@ form {
   background-color: #f9fbfa;
   border-radius: 1rem;
   padding: 2.5rem;
+ 
+  
+  
   max-width: 462px;
 
   display: flex;
   flex-direction: column;
+  
+
 }
 
 form h1 {
@@ -162,8 +169,15 @@ form button:last-child {
   margin-top: 2rem;
 }
 
+.buttom-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  
+}
 #save-pdf {
   margin-top: 1rem;
+  
 }
 
 aside {
