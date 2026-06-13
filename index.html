@@ -1,78 +1,71 @@
 <!DOCTYPE html>
 <html lang=pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <title>Lista de Gastos</title>
-  </head>
+  <link rel="stylesheet" href="styles.css" />
 
-  <body>
-    <main>
-      <div class="logo-container">
+  <title>Lista de Gastos</title>
+</head>
+
+<body>
+  <main>
+    <div class="logo-container">
       <img src="./img/logo.png" alt="logo" class="logo" />
-      </div>
-      <section>
-        <form>
-          <h1>Registros de  gastos</h1>
-          <p>
-            Informe os dados da despesa que deseja registrar para acompanhar seus gastos.
-          </p>
+    </div>
+    <section>
+      <form>
+        <h1>Registros de gastos</h1>
+        <p>
+          Informe os dados da despesa que deseja registrar para acompanhar seus gastos.
+        </p>
 
+        <fieldset>
+          <legend>Nome da despesa</legend>
+          <input type="text" id="expense" name="expense" required />
+        </fieldset>
+
+        <div class="inputs-row">
           <fieldset>
-            <legend>Nome da despesa</legend>
-            <input type="text" id="expense" name="expense" required />
+            <legend>Categoria</legend>
+            <select id="category" name="category" required>
+              <option value="" disabled selected hidden>Selecione</option>
+              <option value="accommodation">Hospedagem</option>
+              <option value="food">Alimentação</option>
+              <option value="services">Serviços</option>
+              <option value="transport">Transporte</option>
+              <option value="others">Outros</option>
+            </select>
           </fieldset>
 
-          <div class="inputs-row">
-            <fieldset>
-              <legend>Categoria</legend>
-              <select id="category" name="category" required>
-                <option value="" disabled selected hidden>Selecione</option>
-                <option value="food">Alimentação</option>
-                <option value="services">Serviços</option>
-                <option value="transport">Transporte</option>
-                <option value="others">Outros</option>
-              </select>
-            </fieldset>
+          <fieldset>
+            <legend>Valor da despesa</legend>
+            <input type="text" name="amount" id="amount" placeholder="0,00" required />
+          </fieldset>
+        </div>
 
-            <fieldset>
-              <legend>Valor da despesa</legend>
-              <input
-                type="text"
-                name="amount"
-                id="amount"
-                placeholder="0,00"
-                required
-              />
-            </fieldset>
-          </div>
+        <button type="submit">Adicionar despesa</button>
+        <button type="button" id="save-pdf">Salvar em PDF</button>
+      </form>
 
-          <button type="submit">Adicionar despesa</button>
-          <button type="button" id="save-pdf">Salvar em PDF</button>
-        </form>
+      <aside>
+        <header>
+          <p>
+            Meus registros <i>&bullet;</i>
+            <span>0 despesas</span>
+          </p>
+          <h2><small>R$</small><span>0,00</span></h2>
+        </header>
 
-        <aside>
-          <header>
-            <p>
-              Meus registros <i>&bullet;</i>
-              <span>0 despesas</span>
-            </p>
-            <h2><small>R$</small><span>0,00</span></h2>
-          </header>
-
-          <ul>
-            <!-- <li class="expense">
+        <ul>
+          <!-- <li class="expense">
               <img src="./img/food.svg" alt="Ícone de tipo da despesa" />
 
               <div class="expense-info">
@@ -84,11 +77,12 @@
 
               <img src="./img/remove.svg" alt="remover" class="remove-icon" />
             </li> -->
-          </ul>
-        </aside>
-      </section>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="./script.js"></script>
-  </body>
+        </ul>
+      </aside>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+
 </html>
